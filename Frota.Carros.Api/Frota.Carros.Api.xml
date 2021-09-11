@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Frota.Carros.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Frota.Carros.Api.Controllers.CarroController.Get">
+            <summary>
+            Listar carros
+            </summary>
+        </member>
+        <member name="M:Frota.Carros.Api.Controllers.CarroController.Post(Frota.Carros.Api.ViewModels.Carro.CadastrarCarroViewModel)">
+            <summary>
+            Cadastrar carro
+            </summary>
+            <param name="carroInput">Parâmetros</param>
+        </member>
+        <member name="M:Frota.Carros.Api.Controllers.CarroController.Put(Frota.Carros.Api.ViewModels.Carro.AtualizarCarroViewModel)">
+            <summary>
+            Atualiza os dados do carro
+            </summary>
+            <param name="carroInput">Parâmetros</param>
+        </member>
+        <member name="M:Frota.Carros.Api.Controllers.UsuarioController.CadastrarUsuario(Frota.Carros.Api.ViewModels.Usuario.CadastrarUsuarioViewModel)">
+            <summary>
+            Cadastrar usuário
+            </summary>
+            <param name="usuarioInput">Parâmetros</param>
+        </member>
+        <member name="M:Frota.Carros.Api.Controllers.UsuarioController.Login(Frota.Carros.Api.ViewModels.Usuario.LoginViewModel)">
+            <summary>
+            Efetuar Login
+            </summary>
+            <param name="loginInput">Parâmetros</param>
+        </member>
+    </members>
+</doc>
