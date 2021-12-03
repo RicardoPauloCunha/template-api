@@ -31,7 +31,7 @@ namespace Frota.Carros.Api.Controllers
         /// </summary>
         [HttpGet]
         [SwaggerResponse(statusCode: 200, description: "Lista de carros")]
-        public IActionResult Get()
+        public IActionResult Listar()
         {
             return Ok(_carroRepository.GetAll());
         }
@@ -39,7 +39,7 @@ namespace Frota.Carros.Api.Controllers
         [HttpGet("{carroId}")]
         [SwaggerResponse(statusCode: 200, description: "Carro encontrado")]
         [SwaggerResponse(statusCode: 404, description: "Carro não encontrado", Type = typeof(ErrorDefault))]
-        public IActionResult Get([FromRoute] int carroId)
+        public IActionResult BuscarPorId([FromRoute] int carroId)
         {
             Carro carro = _carroRepository.GetById(carroId);
 
@@ -54,14 +54,14 @@ namespace Frota.Carros.Api.Controllers
         /// </summary>
         /// <param name="carroInput">Parâmetros</param>
         [HttpPost]
-        [SwaggerResponse(statusCode: 201, description: "Carro cadastrado com sucesso")]
-        public IActionResult Post([FromBody] CadastrarCarroViewModel carroInput)
+        [SwaggerResponse(statusCode: 200, description: "Carro cadastrado com sucesso")]
+        public IActionResult CadastrarCarro([FromBody] CadastrarCarroViewModel carroInput)
         {
             Carro carro = new(carroInput.Placa, carroInput.Marca, carroInput.AnoFabricacao);
 
             _carroRepository.Create(carro);
 
-            return CreatedAtAction(nameof(Get), new { id = carro.Id }, carro);
+            return Ok();
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Frota.Carros.Api.Controllers
         [HttpPut]
         [SwaggerResponse(statusCode: 204, description: "Carro atualizado com sucesso")]
         [SwaggerResponse(statusCode: 404, description: "Carro não encontrado", Type = typeof(ErrorDefault))]
-        public IActionResult Put([FromBody] AtualizarCarroViewModel carroInput)
+        public IActionResult EditarCarro([FromBody] AtualizarCarroViewModel carroInput)
         {
             Carro carro = _carroRepository.GetById(carroInput.Id);
 
@@ -90,7 +90,7 @@ namespace Frota.Carros.Api.Controllers
         [HttpDelete("{carroId}")]
         [SwaggerResponse(statusCode: 204, description: "Carro deletado com sucesso")]
         [SwaggerResponse(statusCode: 404, description: "Carro não encontrado", Type = typeof(ErrorDefault))]
-        public IActionResult Delete([FromRoute] int carroId)
+        public IActionResult RemoverCarro([FromRoute] int carroId)
         {
             Carro carro = _carroRepository.GetById(carroId);
 
@@ -102,9 +102,9 @@ namespace Frota.Carros.Api.Controllers
             return NoContent();
         }
 
-        [HttpPut("{carroId}/vistoria")]
+        [HttpPost("{carroId}/vistoria")]
         [SwaggerResponse(statusCode: 204, description: "Agendamento de vistoria realizado com sucesso")]
-        public async Task<IActionResult> Put(int carroId)
+        public async Task<IActionResult> AgendarVistoria(int carroId)
         {
             await _vistoriaService.AgendarVistoriaCarro(carroId);
 

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frota.Carros.Infra", "Frota
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frota.Carros.Api", "Frota.Carros.Api\Frota.Carros.Api.csproj", "{0648A90C-8308-4C04-A3DA-7DE7A5C83FF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frota.Carros.Test", "Frota.Carros.Test\Frota.Carros.Test.csproj", "{38F1DB6D-CDA5-4B3E-8258-4783298FCF55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0648A90C-8308-4C04-A3DA-7DE7A5C83FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0648A90C-8308-4C04-A3DA-7DE7A5C83FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0648A90C-8308-4C04-A3DA-7DE7A5C83FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38F1DB6D-CDA5-4B3E-8258-4783298FCF55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38F1DB6D-CDA5-4B3E-8258-4783298FCF55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38F1DB6D-CDA5-4B3E-8258-4783298FCF55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38F1DB6D-CDA5-4B3E-8258-4783298FCF55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

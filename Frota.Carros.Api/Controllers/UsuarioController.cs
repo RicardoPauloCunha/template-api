@@ -1,6 +1,7 @@
 ﻿using Frota.Carros.Api.Authentication;
 using Frota.Carros.Api.Configurations.Filters;
 using Frota.Carros.Api.DTOs.ResponseErrors;
+using Frota.Carros.Api.Responses.Usuario;
 using Frota.Carros.Api.ViewModels.Usuario;
 using Frota.Carros.Domain.Models.Usuario;
 using Microsoft.AspNetCore.Mvc;
@@ -54,9 +55,10 @@ namespace Frota.Carros.Api.Controllers
             else if (usuario.Senha != usuario.Senha)
                 return Unauthorized(new ErrorDefault("Email e/ou senha inválido"));
 
-            var token = _authenticationService.GerarToken(usuario);
+            string token = _authenticationService.GerarToken(usuario);
+            TokenResponse tokenResponse = new TokenResponse(token);
 
-            return Ok(new { token });
+            return Ok(tokenResponse);
         }
     }
 }

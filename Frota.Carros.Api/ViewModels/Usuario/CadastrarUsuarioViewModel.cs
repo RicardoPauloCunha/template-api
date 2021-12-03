@@ -8,6 +8,7 @@ namespace Frota.Carros.Api.ViewModels.Usuario
         public string Nome { get; set; }
         
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
         
         [Required]

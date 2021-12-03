@@ -9,5 +9,11 @@ namespace Frota.Carros.Api.ViewModels.Usuario
         
         [Required]
         public string Senha { get; set; }
+
+        public LoginViewModel(string email, string senha)
+        {
+            Email = email;
+            Senha = senha;
+        }
     }
 }

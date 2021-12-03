@@ -4,18 +4,18 @@
         <name>Frota.Carros.Api</name>
     </assembly>
     <members>
-        <member name="M:Frota.Carros.Api.Controllers.CarroController.Get">
+        <member name="M:Frota.Carros.Api.Controllers.CarroController.Listar">
             <summary>
             Listar carros
             </summary>
         </member>
-        <member name="M:Frota.Carros.Api.Controllers.CarroController.Post(Frota.Carros.Api.ViewModels.Carro.CadastrarCarroViewModel)">
+        <member name="M:Frota.Carros.Api.Controllers.CarroController.CadastrarCarro(Frota.Carros.Api.ViewModels.Carro.CadastrarCarroViewModel)">
             <summary>
             Cadastrar carro
             </summary>
             <param name="carroInput">Parâmetros</param>
         </member>
-        <member name="M:Frota.Carros.Api.Controllers.CarroController.Put(Frota.Carros.Api.ViewModels.Carro.AtualizarCarroViewModel)">
+        <member name="M:Frota.Carros.Api.Controllers.CarroController.EditarCarro(Frota.Carros.Api.ViewModels.Carro.AtualizarCarroViewModel)">
             <summary>
             Atualiza os dados do carro
             </summary>
